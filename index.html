@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Daily Time & Goals Tracker</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>My Daily Time & Goals Tracker</h1>
+        </div>
+        <div id="upload-section">
+            <label for="fileInput" class="button">Upload</label>
+            <input type="file" id="fileInput" accept=".json" hidden>
+        </div>
+        <div id="chart-section">
+            <h2>Activity Chart</h2>
+            <canvas id="chart"></canvas>
+        </div>
+        <div id="goal-section">
+            <h2>Goal Results</h2>
+            <ul id="goals"></ul>
+            <div id="goalSummary"></div>
+        </div>
+        <div id="reset-section">
+            <button id="resetButton" class="button">Reset</button>
+        </div>
+    </body>
+</html>
