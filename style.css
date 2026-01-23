@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    all: unset;
+    cursor: default;
+}
+
+.button {
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+canvas {
+    border: 3px solid lightgray;
+}
