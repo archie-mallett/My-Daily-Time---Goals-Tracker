@@ -1,0 +1,12 @@
+{
+    "activities": [
+        {"name": "Coding", "timeSpent": 0},
+        {"name": "Reading", "timeSpent": 0},
+        {"name": "Excersie", "timeSpent": 0}
+    ],
+    "goals": [
+        {"name": "Code for 2 hours", "targetMinutes": 120, "completed": false},
+        {"name": "Read for 1 hour", "targetMinutes": 60, "completed": false},
+        {"name": "Excersise for 30 minutes", "targetMinutes": 30, "completed": false}
+    ]
+}
