@@ -7,6 +7,7 @@ document.getElementById("fileInput").addEventListener("change", function(e) {
         console.log("JSON loaded:", json);
 
         updateChart(json.activities);
+        updateGoals(json.goals);
     }
     
     reader.readAsText(file);
@@ -42,4 +43,48 @@ function updateChart(activities) {
     chart.data.datasets[0].data = values;
 
     chart.update();
+}
+
+function updateGoals(goals) {
+    const list = document.getElementById("goals");
+    const summary = document.getElementById("goalSummary");
+
+    list.innerHTML = "";
+
+    let completed = 0;
+
+    for (let i = 0; i < goals.length; i++) {
+        const goal = goals[i];
+
+        let achieved = false;
+        if (goal.completed === true) {
+            achieved = true;
+        }
+
+        let symbol;
+        if (achieved === true) {
+            symbol = "✓";
+            completed = completed + 1;
+        } else {
+            symbol = "✗";
+        }
+
+        const li = document.createElement("li");
+        
+        const symbolSpan = document.createElement("span");
+        symbolSpan.textContent = " " + symbol;
+
+        if (achieved === true) {
+            symbolSpan.classList.add("goal-done");
+        } else {
+            symbolSpan.classList.add("goal-not-done");
+        }
+
+        li.textContent = goal.name + ":";
+        li.appendChild(symbolSpan);
+
+        list.appendChild(li);
+    }
+
+    summary.textContent = completed + " out of " + goals.length + " goals completed";
 }

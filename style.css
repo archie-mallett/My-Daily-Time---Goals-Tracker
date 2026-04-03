@@ -28,3 +28,18 @@ button {
 canvas {
     border: 3px solid lightgray;
 }
+
+.goal-done {
+    color: green;
+    font-weight: bold;
+}
+
+.goal-not-done {
+    color: red;
+    font-weight: bold;
+}
+
+#goalSummary {
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
