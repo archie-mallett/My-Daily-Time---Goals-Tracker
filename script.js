@@ -13,6 +13,14 @@ document.getElementById("fileInput").addEventListener("change", function(e) {
     reader.readAsText(file);
 })
 
+const activityColours = {
+    Coding: "lightblue",
+    Reading: "peachpuff",
+    Exercise: "lightgreen",
+    Studying: "lavender",
+    Relaxing: "lightcoral"
+}
+
 const ctx = document.getElementById("chart").getContext("2d");
 const chart = new Chart(ctx, {
     type: "bar",
@@ -27,9 +35,44 @@ const chart = new Chart(ctx, {
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: "Time (minutes)",
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    color: '#000'
+                },
+                border: {
+                    display: true,
+                    width: 1,
+                    color: '#000'
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: "Activity",
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    color: '#000'
+                },
+                border: {
+                    display: true,
+                    width: 1,
+                    color: '#000'
+                }
             }
         }
     }
@@ -38,9 +81,11 @@ const chart = new Chart(ctx, {
 function updateChart(activities) {
     const labels = activities.map(a => a.name);
     const values = activities.map(a => a.timeSpent);
+    const colours = labels.map(label => activityColours[label] || "lightgray");
 
     chart.data.labels = labels;
     chart.data.datasets[0].data = values;
+    chart.data.datasets[0].backgroundColor = colours;
 
     chart.update();
 }

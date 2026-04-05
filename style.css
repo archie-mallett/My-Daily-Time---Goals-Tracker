@@ -1,9 +1,24 @@
 body {
     margin: 0;
+    min-height: 100vh;
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+
+    background: #f5f5f5;
+    padding-top: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+#app {
+    border: 3px solid lightgray;
+    border-radius: 12px;
+    padding: 20px 40px 40px 40px;
+    background: white;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -40,6 +55,20 @@ canvas {
 }
 
 #goalSummary {
-    margin-left: 25px;
     margin-bottom: 30px;
+    font-weight: bold;
+}
+
+#upload-section, #reset-section {
+    text-align: center;
+}
+
+#goal-section {
+    text-align: center;
+}
+
+#goals {
+    margin-top: 0;
+    display: inline-block;
+    text-align: left;
 }
