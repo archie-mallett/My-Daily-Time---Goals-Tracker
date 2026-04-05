@@ -88,3 +88,15 @@ function updateGoals(goals) {
 
     summary.textContent = completed + " out of " + goals.length + " goals completed";
 }
+
+function resetPage() {
+    chart.data.labels = [];
+    chart.data.datasets[0].data = [];
+    chart.update();
+
+    document.getElementById("goals").innerHTML = "";
+    document.getElementById("goalSummary").textContent = "";
+    document.getElementById("fileInput").value = "";
+}
+
+document.getElementById("resetButton").addEventListener("click", resetPage);
